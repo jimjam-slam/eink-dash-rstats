@@ -6,7 +6,7 @@ counter <- 0
 #* @serializer html
 function() {
   return(
-    readLines("home.template.html") |>
+    readLines(file.path("templates", "home.html")) |>
       paste(collapse = "\n") |>
       glue())
 }
