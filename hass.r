@@ -44,6 +44,19 @@ get_scenes <- function() {
 # template constructors ----------------------------
 # these build ui from the above state functions and html templates/
 
+make_redirect_to_home <- function() {
+  readLines(file.path("templates", "redirect-to-home.html")) |>
+    paste(collapse = "\n")
+}
+
+make_home <- function() {
+  # TODO - turn get_state() into a closure to cache over course of request
+  readLines(file.path("templates", "home.html")) |>
+    paste(collapse = "\n") |>
+    glue()
+
+}
+
 #' Make scene buttons
 #' 
 make_scene_buttons <- function() {
