@@ -1,5 +1,16 @@
 counter <- 0
 
+#* @post /scene/activate
+#* @parser form
+#* @param 
+function(entity_id) {
+  warning(paste("Received a scene activation for", entity_id))
+  list(msg = paste("Got a scene activation request for", entity_id))
+}
+
+# test functions --------------------------------------------------------------
+# not used for the actual api
+
 #* Echo the parameter that was sent in
 #*
 #* @get /

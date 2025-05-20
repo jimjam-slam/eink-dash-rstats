@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>eInk Dash</title>
+    <link rel="stylesheet" href="/assets/styles.css">
   </head>
   <body>
     <h1>eInk Dash</h1>
@@ -14,7 +15,9 @@
     </section>
     <section>
       <h2>Scenes</h2>
-      {{ get_scenes() }}
+      <ul id="scene-buttons">
+        { make_scene_buttons() }
+      </ul>
     </section>
   </body>
 </html>
