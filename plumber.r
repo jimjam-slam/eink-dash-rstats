@@ -11,8 +11,10 @@ function() {
 #* @parser form
 #* @serializer html
 #* @param 
-function(req, res, entity_id) {
-  message(paste("Received a scene activation for", entity_id))
+function(req, res, scene_id) {
+  message(paste("Received a scene activation for", scene_id))
+
+  activate_scene(scene_id)
   
   # redirect
   res$status <- 303

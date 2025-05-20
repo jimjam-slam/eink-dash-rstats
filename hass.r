@@ -25,6 +25,17 @@ get_states <- function() {
     tibble::as_tibble()
 }
 
+activate_scene <- function(scene_id) {
+  hass_request |>
+    req_url_relative("api/services/scene/turn_on") |>
+    req_body_json(data = list(entity_id = scene_id)) |>
+    req_perform() ->
+  scene_req
+
+  print(scene_req)
+  return(scene_req)
+}
+
 # state queries ---------------------------------------------------------------
 # these query the above state getter and filter it down for various uses
 
