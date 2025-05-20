@@ -6,19 +6,13 @@
   </head>
   <body>
     <h1>eInk Dash</h1>
-    <section>
-      <h2>TEST</h2>
-      <p>Lamp is XXX</p>
-      <p>Brightness: XXX</p>
-      <form action="/toggle/wicker-lamp" method="post">
-        <button name="" value="" type="submit">Toggle</button>
-      </form>
-    </section>
-    <section>
-      <h2>Scenes</h2>
-      <ul id="scene-buttons">
+    <details open id="scene-buttons">
+      <summary>
+        <h2>Scenes</h2>
+      </summary>
+      <ul>
         { make_scene_buttons() }
       </ul>
-    </section>
+    </details>
   </body>
 </html>

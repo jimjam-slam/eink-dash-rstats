@@ -13,7 +13,7 @@ glue("http://{hass_ip}:{hass_port}") |>
     "Authorization" = glue("Bearer {hass_token}")) ->
 hass_request
 
-# requests --------------------------------------------
+# requests --------------------------------------------------------------------
 # these functions do the actual GETting and POSTing to hass
 
 #' get state of all home assistant entities
@@ -25,9 +25,8 @@ get_states <- function() {
     tibble::as_tibble()
 }
 
-# state queries ------------------------------------
-# these query the above state getter and filter it down for
-# various uses
+# state queries ---------------------------------------------------------------
+# these query the above state getter and filter it down for various uses
 
 #' Get details needed to display scenes
 get_scenes <- function() {
@@ -41,7 +40,7 @@ get_scenes <- function() {
     
 }
 
-# template constructors ----------------------------
+# template constructors -------------------------------------------------------
 # these build ui from the above state functions and html templates/
 
 make_redirect_to_home <- function() {
@@ -54,7 +53,6 @@ make_home <- function() {
   readLines(file.path("templates", "home.html")) |>
     paste(collapse = "\n") |>
     glue()
-
 }
 
 #' Make scene buttons
@@ -71,3 +69,21 @@ make_scene_buttons <- function() {
     paste(collapse = "\n")
 }
 
+# helpers ---------------------------------------------------------------------
+
+#' Get static icon path (or fallback) from home assistant identifier
+icon_path <- function(ids) {
+
+  # convert identifiers to paths
+  stripped_ids <- sub("^mdi:", "", x = ids)
+  icon_paths <- file.path(
+    "assets",
+    "icons",
+    glue("baseline_{ stripped_ids }_black_24dp.png"))
+
+  # replace missing icons with fallback
+  icon_paths[!file.exists(icon_paths)] <-
+    file.path("assets", "icons", "baseline_stars_black_24dp.png")
+
+  icon_paths
+}

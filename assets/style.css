@@ -18,14 +18,37 @@ body {
   font-family: Inter;
 }
 
+#scene-buttons summary {
+  border-bottom: 1px solid grey;
+}
+
+#scene-buttons summary h2 {
+  margin-block-end: 0.25em;
+}
+
+#scene-buttons ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 0.5em;
+  padding-inline: 0;
+}
+
 #scene-buttons button {
   background: lightgrey;
-  border-radius: 1em;
-  padding: 0.5em;
+  border: none;
+  border-radius: 1.5em;
+  padding: 0.5em 0.75em;
 
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+
+  font-size: 0.8em;
+}
+
+#scene-buttons button img {
+  width: 1.2em;
 }
 
 input.scene-form-data {
