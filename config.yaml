@@ -1,0 +1,11 @@
+name: "eInk dashboard"
+description: "Dashboard for tweaking lights, even when JavaScript isn't available (like on the Kobo)"
+version: "0.1.0"
+slug: "eink_dash"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
