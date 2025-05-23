@@ -1,6 +1,6 @@
 # eink-dash-rstats
 
-Inspired by [FI-153/eInk_dashboard](https://github.com/FI-153/eInk_dashboard), but this one uses an R plumber API (instead of Python and Flask) and is more geared toward 
+Inspired by [FI-153/eInk_dashboard](https://github.com/FI-153/eInk_dashboard), but this one uses an R plumber API (instead of Python and Flask) and is more geared toward quickly turning lights on and off.
 
 ## Config
 
